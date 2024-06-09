@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Comprueba tu Conocimiento - Autoevaluación</title>
+</head>
+<body>
+    <h1>Comprueba tu Conocimiento - Autoevaluación</h1>
+    
+    <!-- Aquí irán las preguntas del test -->
+    <form>
+        <strong><p>¿Cuál fue uno de los factores que motivó el nacimiento de la Teoría de la Gestalt?</p></strong>
+        <input type="radio" name="q1" value="a">La necesidad de estudiar la mente subconsciente del Conductismo.<br>
+        <input type="radio" name="q1" value="b">El rechazo de la subjetividad del conductismo de John Watson.<br>
+        <input type="radio" name="q1" value="c">La influencia del psicoanálisis de Sigmund Freud.<br>
+        
+        <strong><p>¿Cuál es el objeto de estudio de la Psicología de la Gestalt?</p></strong>
+        <input type="radio" name="q2" value="a">La experiencia psicológica consciente.<br>
+        <input type="radio" name="q2" value="b">El comportamiento humano.<br>
+        <input type="radio" name="q2" value="c">La experiencia inconsciente.<br>
+    </form>
+   
+<br>
+<br>
+    <button onclick="calculateScore()">Obtener puntaje</button>
+    
+    <p id="score"></p>
+
+    <script>
+      function calculateScore() {
+    let score = 0;
+
+    // Obtener las respuestas seleccionadas
+    let q1Answer = document.querySelector('input[name="q1"]:checked');
+    let q2Answer = document.querySelector('input[name="q2"]:checked');
+
+    // Verificar si las respuestas son correctas y sumar los puntajes
+    if (q1Answer && q1Answer.value === 'b') {
+        score += 10;
+    }
+    if (q2Answer && q2Answer.value === 'a') {
+        score += 10;
+    }
+
+    // Mostrar el puntaje
+    document.getElementById('score').textContent = `Tu puntaje es: ${score}/20`;
+}
+        
+    </script>
+</body>
+</html>
